@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Inc | NEON Group Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #fdbb2d;
+            --accent: #b21f1f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 3px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .slogan {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .banner h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Features Section */
+        #features {
+            background-color: var(--light);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        #services {
+            background-color: white;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .service-box:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-box i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-box p {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Section */
+        #stats {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+        }
+
+        #stats h2 {
+            color: white;
+        }
+
+        #stats h2::after {
+            background: var(--secondary);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-box {
+            padding: 30px;
+        }
+
+        .stat-box i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-box::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-list i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .contact-details {
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 30px;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background-color: white;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Map Section */
+        #map {
+            height: 400px;
+            background-color: #eee;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .slogan {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .banner h2 {
+                font-size: 2.5rem;
+            }
+            
+            .banner p {
+                font-size: 1.2rem;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Success Inc Logo" class="logo">
+                <div>
+                    <h1>Success Inc</h1>
+                    <p class="slogan">"Empowering Your Vision, Elevating Your Success"</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">হোম</a></li>
+            <li><a href="#features">বৈশিষ্ট্য</a></li>
+            <li><a href="#services">সার্ভিস</a></li>
+            <li><a href="#about">আমাদের সম্পর্কে</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="banner">
+        <div class="banner-content">
+            <h2>Welcome to Success Inc</h2>
+            <p>NEON Group এর একটি গর্বিত এজেন্সি</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#services" class="cta-button">আমাদের সার্ভিস</a>
+                <a href="#contact" class="cta-button">যোগাযোগ করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>কেন আমাদের বেছে নিবেন</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <i class="fas fa-award"></i>
+                    <h3>প্রশিক্ষিত এক্সপার্ট</h3>
+                    <p>আমাদের দক্ষ টিম সবসময় আপনার সেবায় প্রস্তুত</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>২৪/৭ সাপোর্ট</h3>
+                    <p>যেকোনো সময় আমাদের সাথে যোগাযোগ করতে পারেন</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-handshake"></i>
+                    <h3>বিশ্বস্ত পরিষেবা</h3>
+                    <p>বছরের পর বছর ধরে আমরা বিশ্বস্ততা বজায় রেখেছি</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-globe"></i>
+                    <h3>বিশ্বব্যাপী নেটওয়ার্ক</h3>
+                    <p>বিশ্বের বিভিন্ন দেশে আমাদের পার্টনার রয়েছে</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>আমাদের সার্ভিসসমূহ</h2>
+            <div class="services">
+                <div class="service-box">
+                    <i class="fas fa-passport"></i>
+                    <h3>Visa Consultancy</h3>
+                    <p>বিশ্বব্যাপী ভিসা ও ট্রাভেল সার্ভিস প্রদান।</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-plane"></i>
+                    <h3>Flight & Tour Management</h3>
+                    <p>এয়ার টিকিট, হোটেল বুকিং এবং ট্যুর প্যাকেজ।</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Corporate Solutions</h3>
+                    <p>প্রতিষ্ঠানের জন্য বিশেষ ব্যবসায়িক সহায়তা।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="container">
+            <h2>আমাদের সাফল্য</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">৫০০+</div>
+                    <div class="stat-text">সন্তুষ্ট ক্লায়েন্ট</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-plane-departure"></i>
+                    <div class="stat-number">১০০০+</div>
+                    <div class="stat-text">সফল ভিসা অ্যাপ্লিকেশন</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-globe-americas"></i>
+                    <div class="stat-number">২০+</div>
+                    <div class="stat-text">দেশে আমাদের সার্ভিস</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-number">৫+</div>
+                    <div class="stat-text">বছরের অভিজ্ঞতা</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>ক্লায়েন্ট রিভিউ</h2>
+            <div class="testimonials">
+                <div class="testimonial-box">
+                    <div class="testimonial-text">
+                        Success Inc এর মাধ্যমে আমি কানাডা স্টুডেন্ট ভিসা পেয়েছি। তাদের সার্ভিস এবং গাইডেন্স অসাধারণ ছিল। বিশেষ করে ভিসা অ্যাপ্লিকেশন প্রসেসে তারা আমাকে অনেক হেল্প করেছে।
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="author-avatar">
+                        <div class="author-info">
+                            <h4>রফিকুল ইসলাম</h4>
+                            <p>কানাডা স্টুডেন্ট ভিসা</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-box">
+                    <div class="testimonial-text">
+                        ব্যবসায়িক ভিসার জন্য আমি Success Inc কে বেছে নিয়েছিলাম। তাদের প্রফেশনালিজম এবং এক্সপার্টিজের কারণে আমার ভিসা খুব দ্রুত অ্যাপ্রুভ হয়েছে।强烈推荐!
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="author-avatar">
+                        <div class="author-info">
+                            <h4>নুসরাত জাহান</h4>
+                            <p>ইউকে বিজনেস ভিসা</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-box">
+                    <div class="testimonial-text">
+                        পরিবার নিয়ে ভ্রমণের জন্য ফ্লাইট এবং হোটেল বুকিং করেছিলাম Success Inc থেকে। তাদের দেওয়া প্যাকেজ ছিল অর্থনৈতিক এবং সুবিধাজনক। নেক্সট ট্রিপেও অবশ্যই তাদের সাথে যোগাযোগ করব।
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="author-avatar">
+                        <div class="author-info">
+                            <h4>জaved করিম</h4>
+                            <p>ব্যাংকক ট্যুর প্যাকেজ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>আমাদের সম্পর্কে</h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <h3>আপনার সাফল্যের জন্য আমরা প্রতিশ্রুতিবদ্ধ</h3>
+                    <p>
+                        Success Inc হল NEON Group এর একটি এজেন্সি যা সিলেট থেকে পরিচালিত হয়।
+                        আমরা দক্ষ টিমের মাধ্যমে সেরা ট্রাভেল ও কনসালটেন্সি সার্ভিস প্রদান করি।
+                        আমাদের লক্ষ্য হল গ্রাহকদের স্বপ্নপূরণে সাহায্য করা এবং তাদের সাফল্যের পথ সুগম করা।
+                    </p>
+                    <p>
+                        আমরা বিশ্বাস করি যে প্রতিটি ভ্রমণ একটি নতুন অভিজ্ঞতা এবং প্রতিটি ভিসা একটি নতুন সুযোগ।
+                        আমাদের বিশেষজ্ঞ টিম সবসময় আপনার প্রয়োজনে পাশে আছে, যেকোনো ধরনের ভ্রমণ বা ভিসা সম্পর্কিত পরামর্শের জন্য।
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> অভিজ্ঞ এবং প্রশিক্ষিত পরামর্শদাতা</li>
+                        <li><i class="fas fa-check-circle"></i> স্বচ্ছ এবং নৈতিক ব্যবসায়িক অনুশীলন</li>
+                        <li><i class="fas fa-check-circle"></i> গ্রাহক সন্তুষ্টি নিশ্চিতকরণ</li>
+                        <li><i class="fas fa-check-circle"></i> সময়মত এবং নির্ভরযোগ্য পরিষেবা</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About Success Inc">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>যোগাযোগ করুন</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>আমাদের ঠিকানা</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>কুইন্স টাওয়ার, নিচ তলা, কদমতলি, হুমায়ূন চত্বর, সিলেট</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+8809643776654</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+8801613076654</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>success.inc22@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>শনি-বৃহস্পতি: ৯:০০ AM - ৮:০০ PM</span>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">সামাজিক যোগাযোগ</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>বার্তা পাঠান</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">আপনার নাম</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ইমেইল</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">ফোন নম্বর</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">সার্ভিস</label>
+                            <select id="service">
+                                <option value="">সার্ভিস নির্বাচন করুন</option>
+                                <option value="visa">ভিসা কনসালটেন্সি</option>
+                                <option value="flight">ফ্লাইট বুকিং</option>
+                                <option value="tour">ট্যুর প্যাকেজ</option>
+                                <option value="corporate">কর্পোরেট সলিউশন</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">বার্তা</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">বার্তা পাঠান</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map">
+        <!-- Google Map would be embedded here -->
+        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #e9ecef;">
+            <div style="text-align: center;">
+                <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: #6c757d; margin-bottom: 15px;"></i>
+                <h3 style="color: #6c757d;">Google Map</h3>
+                <p style="color: #6c757d;">কুইন্স টাওয়ার, কদমতলি, সিলেট</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Success Inc</h3>
+                    <p>আপনার ভ্রমণ এবং ভিসা প্রয়োজনীয়তা পূরণের জন্য আমরা এখানে আছি। আমাদের অভিজ্ঞ টিম সবসময় আপনার সেবায় প্রস্তুত।</p>
+                </div>
+                <div class="footer-column">
+                    <h3>দ্রুত লিংক</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#services">সার্ভিস</a></li>
+                        <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>সার্ভিস</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">ভিসা কনসালটেন্সি</a></li>
+                        <li><a href="#">ফ্লাইট বুকিং</a></li>
+                        <li><a href="#">ট্যুর প্যাকেজ</a></li>
+                        <li><a href="#">কর্পোরেট সলিউশন</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>যোগাযোগ</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> কুইন্স টাওয়ার, সিলেট</li>
+                        <li><i class="fas fa-phone"></i> +8809643776654</li>
+                        <li><i class="fas fa-envelope"></i> success.inc22@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Success Inc | Developed by NEON Group | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('ধন্যবাদ! আপনার বার্তা সফলভাবে পাঠানো হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
